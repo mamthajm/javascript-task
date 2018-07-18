@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
 
@@ -50,46 +51,8 @@
     <section id="result"></section>
 
     <script>
-var body = document.getElementsByTagName('body')[0].innerHTML;
-var regex = /(<([^>]+)>)/ig;
-var result = body.replace(regex, "<p>").split('<p>').filter((r) => r.trim());
-var section = document.getElementById("result");
-var ol = document.createElement("ol");
-ol.setAttribute('id','result-list');
-section.appendChild(ol);
-var occurenceObj = {};
-var occurenceArr = [];
-
-result.forEach(r => {
-    var str = r.trim().replace(/[^a-zA-Z ]/g, "");
-    var strArr = str.split(' ');
-    strArr.forEach(sa => {
-        if (sa.toLowerCase()) {
-            if (occurenceObj[sa.toLowerCase()]) {
-                occurenceObj[sa.toLowerCase()]++;
-            } else {
-                occurenceObj[sa.toLowerCase()] = 1;
-            }
-        }       
-    })    
-})
-
-for (var key in occurenceObj) {
-    if (occurenceObj[key])
-        occurenceArr.push({'word': key, 'count':occurenceObj[key]});
-}
-
-occurenceArr.sort(function(a, b) {
-    return b.count - a.count;
-});
-
-occurenceArr.forEach(oa => {
-    var li = document.createElement("li");
-    li.appendChild(document.createTextNode(oa.word + ' ' +'('+ oa.count +')'));
-    ol.appendChild(li);
-});    
-</script>
-<span id="occurenceArr"></span>
+        // Your code
+    </script>
 </body>
 
 </html>
